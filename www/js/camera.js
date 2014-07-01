@@ -42,12 +42,12 @@ function onPhotoURISuccess(imageURI) {
 
 
 $(function(){
-		function onUrlSuccess(imageURL) {
+		function onUriSuccess(imageURI) {
     var image = document.getElementById('cameraImage');
-    image.src = imageURL;
+    image.src = imageURI;
 }
 
-function onUriSuccess(imageData) {
+function onUrlSuccess(imageData) {
 var image = document.getElementById('cameraImage');
 image.src = "data:image/jpeg;base64," + imageData;
 }
@@ -58,7 +58,7 @@ function onFail(message) {
     $("#take_pic").click(function(){ 
 navigator.camera.getPicture(onUrlSuccess, onFail, { quality: 50,
 destinationType: Camera.DestinationType.DATA_URL, 
-  targetWidth: 500
+ targetWidth: 500
 });
  
  
@@ -67,7 +67,7 @@ destinationType: Camera.DestinationType.DATA_URL,
     $("#album_pic").click(function(){ 
 
 
-    navigator.camera.getPicture(onUriSuccess, onFail, { quality: 50,
+    navigator.camera.getPicture(onUrlSuccess, onFail, { quality: 50,
     destinationType: Camera.DestinationType.DATA_URL,
 	sourceType: Camera.PictureSource.SAVEDPHOTOALBUM,
 	targetWidth: 500	});
